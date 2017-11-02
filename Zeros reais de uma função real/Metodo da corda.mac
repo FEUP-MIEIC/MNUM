@@ -1,0 +1,13 @@
+metodo_corda(func, a, b, precision, n_iterations):=(
+    while (abs(a-b) > precision) and (n_iterations > 0) do (
+        block([m,r],
+            m: (func(b)-func(a))/(b-a), /* declive da reta que une func(a) e func(b) */
+            r: -func(a)/m + a, /* raiz da reta */
+            if(func(a)*func(r) < 0) 
+            then b: r
+            else a: r,
+            print(float(r)),
+            n_iterations: n_iterations - 1
+        )
+    )
+)$

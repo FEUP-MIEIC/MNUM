@@ -2,46 +2,43 @@
 #include <cmath>
 #include <iomanip>
 
-#define EPSILON 0.000000001
-#define OUTPUT_PRECISION 13
+#define EPSILON 0.000001
+#define PRECISION 10
+#define N_ITERATIONS 15
 
 using namespace std;
 
 template<typename T>
-T f_x(T x)
+T func_x(T x)
 {
     return 4-x*x;
 }
 
-int main()
+int main(int argc, char **argv)
 {
-    double a, b, f_a, f_b, f_m, m;
-    bool rootFound = false;
-
-    // set the range
-    a = 0;
-    b = 3;
+    double a = atoi(argv[1]), b = atoi(argv[2]);
+    unsigned char counter = 0;
 
     do
     {
+        double f_a = func_x(a), f_b = func_x(b), 
+            f_m, m;
+
+        if(f_a*f_b > 0)
+        {
+            cout << "Intervalo inválido!\n";
+            break;
+        }
+
         m = (a+b)/2;
-        f_m = f_x(m);
-        f_a = f_x(a); 
-        f_b = f_x(b);
-        
-        if(f_m == 0) rootFound = true; // root found
-        else if(f_a*f_m < 0) b=m;
-        else if(f_b*f_m < 0) a=m;
+        f_m = func_x(m);
 
-        cout << setprecision(OUTPUT_PRECISION) << setfill('0')
-            << "a = " << left << setw(OUTPUT_PRECISION+1) << a 
-            << "\t b = " << left << setw(OUTPUT_PRECISION+1) << b << endl;
+        if(f_a*f_m < 0) b = m;
+        else a = m;
 
-    } while (abs(a-b) > EPSILON && !rootFound);
+        cout << fixed << setprecision(PRECISION) << m << endl;
 
-    if(rootFound)
-        cout << "Root found at x = " << m << endl;
-    else
-        cout << "Root on range (" << a << "," << b << ")" << endl;
+        counter++;
 
+    } while(abs(a-b) > EPSILON && counter < N_ITERATIONS);
 }

@@ -1,0 +1,12 @@
+metodo_bissecao(func,a,b,precision,n_iterations):=(
+    block([m],
+        while abs(a-b) > precision and n_iterations > 0 do (
+            m: (a+b)/2,
+            if func(a)*func(m) < 0 
+                then b: m 
+                else a: m,
+            print(float(m)),
+            n_iterations: n_iterations-1
+        )
+    )
+)$
