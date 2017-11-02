@@ -1,0 +1,7 @@
+metodo_newton(func, dfunc, guess, n_iterations):=(
+    for i: 1 step 1 thru n_iterations do(
+        r: -f(guess)/dfunc(guess) + guess,
+        print(float(r)),
+        guess: r
+    )
+)$
