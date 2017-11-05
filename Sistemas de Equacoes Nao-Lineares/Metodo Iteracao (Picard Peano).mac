@@ -1,0 +1,25 @@
+sistema_iterativo(x0, y0, g_x, g_y, n_iterations):=(
+    for i:0 thru n_iterations do(
+        x0: g_x(x0,y0),
+        y0: g_y(x0,y0),
+        print("x: ", x0),
+        print("y: ", y0)
+    )
+)$
+
+/* Exemplo */
+/*
+Sistema:
+    - 4x-ln(xy)-8=0
+    - 2x-4y+sqrt(xy)-3= 0
+
+Escrevendo as equacoes como x=g1(x,y) and y=g2(x,y)
+    - x = (ln(xy)+8)/4 
+    - y = (2x+sqrt(xy)-3)/4
+
+Usando x0 = 1.5, y0 = 1 ...
+*/
+
+gx(x,y) := (log(x*y)+8)/4;
+gy(x,y) := (2*x+sqrt(x*y)-3)/4;
+sistema_iterativo(1.5, 1, gx, gy, 10);
