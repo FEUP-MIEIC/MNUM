@@ -1,0 +1,27 @@
+sistema_newton(X, F, n_iterations):= (
+    for i:0 thru n_iterations do (
+        Jinv: invert(jacobian([X[1][1], X[2][1]], [x,y])),
+        a: subst([x = X[1][1], y=X[2][1]], F[1][1]),
+        b: subst([x = X[1][1], y=X[2][1]], F[2][1]),
+        Fx: matrix([a], [b]),
+        X = X - Jinv.Fx,
+        print(X)
+    )
+)$
+
+/* Exemplo */
+/*
+Sistema:
+    - 4x-ln(xy)-8=0
+    - 2x-4y+sqrt(xy)-3= 0
+
+Escrevendo as equacoes como x=g1(x,y) and y=g2(x,y)
+    - x = (ln(xy)+8)/4 
+    - y = (2x+sqrt(xy)-3)/4
+
+Usando x0 = 1.5, y0 = 1 ...
+*/
+
+F: matrix([(log(x*y)+8)/4], [(2*x+sqrt(x*y)-3)/4]);
+X: matrix([1.5], [1]);
+sistema_newton(X, F, 10);

@@ -10,3 +10,8 @@ metodo_bissecao(func,a,b,precision,n_iterations):=(
         )
     )
 )$
+
+/*
+f(x):=x^4-4*x+1;
+metodo_bissecao(f, 0, 1, 0.00001, 10);
+*/
