@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <math.h>
 
 double f_x(double x) {
@@ -8,7 +7,7 @@ double f_x(double x) {
 
 double primitive_simpson(double (*f)(double), double a, double b, int n) {
     int i;
-    double h = (b-a)/n;
+    double h = fabs(b-a)/n;
     double I = (*f)(a) + (*f)(b);
     for(i = 1; i <= n-1; i++) {
         if(i%2 != 0)
