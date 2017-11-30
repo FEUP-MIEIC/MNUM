@@ -24,19 +24,26 @@ double primitive(double (*f)(double), double (*g)(double), double a, double b, i
     double h = (a+b)/n, x = a, I = 0;
     *e = 0; // error
     int i;
-    for(i = 0; i <= n; i++)
+
+    
+    for(i = 1; i <= n-1; i++)
     {
-        if(i == 0 || i == n) 
-            I += (*f)(x);
-        else 
-            I += 2 * (*f)(x);
+        I += (*f)(x);
         
-        *e -= (h*h*h/12)*(*g)(x);
+        *e -= (*g)(x);
         
         x += h;
     }
 
-    I *= h/2;
+    // finish integral calculation
+    I *= 2; // 2*y1+2*y2+...2*y(n-1) -> 2* [y1+y2+...+y(n-1)]
+    I += (*f)(a) + (*f)(b); // add missing y0 and yn
+    I *= h/2; // h/2*[y0 + 2y1 + 2y2 + ... + 2y(n-1) + yn]
+
+    // finish calculating the error
+    *e -= (*g)(a) - (*g)(b); // subtract missing f''(a) and f''(b). NOTE: g(x) is the second derivative of f
+    *e *= (h*h*h/12);
+    
 
     return I;
 
