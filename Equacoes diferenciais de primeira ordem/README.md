@@ -5,7 +5,7 @@ This regards the Chapter 5, about solving differential equations using numerical
 The Euler method is the most simple method to solve ODEs. It's also the least precise. 
 
 Imagine you want to solve y'=y and the particular solution is known, y(0)=1. This is straightforward to solve algebrically, the solution would be y=e^x. 
-![solution](\img\1.png)
+![solution](/img/1.png)
 
 We know two things. From the initial condition, we know the equation solution at x=0, which is 1 (y(0)=1). Moreover, we know the derivative of "function solution" is y (y'=y ... dy/dx=y), so we also know the slope at x=0 (y is 1 at this point, so the slope is 1 from the equation). 
 
@@ -18,8 +18,8 @@ x | y | dy/dx
 1 | 2 | 2
 2 | 4 | 4
 3 | 8 | 8 
-![tangent line](\img\2.png)
-![tangent line](\img\2_.png)
+![tangent line](/img/2.png)
+![tangent line](/img/2_.png)
 
 In general, for a ODE in form y' = f(x,y), we have:
 * x(n+1) = x + h
