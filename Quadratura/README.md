@@ -51,4 +51,4 @@ Next, we evaluate the following ratio. If it's aproximately 2^n, then _I''_ is g
 
 And the error for _I''_, the best integral aproximation, is evaluated as
 
-![equation](http://latex.codecogs.com/gif.latex?%7B%5Cvarepsilon%7D%27%27%20%3D%20%5Cfrac%20%7B%7BI%7D%27%27-%7BI%7D%27%7D%7B%7B2%7D%5En%7D)
+![equation](http://latex.codecogs.com/gif.latex?%7B%5Cvarepsilon%7D%27%27%20%3D%20%5Cfrac%20%7B%7BI%7D%27%27-%7BI%7D%27%7D%7B%7B2%7D%5En-1%7D)
