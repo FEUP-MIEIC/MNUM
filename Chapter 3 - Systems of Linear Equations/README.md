@@ -34,18 +34,18 @@ There are two iterative methods based on Picard-Peano method seen on Chapter 2. 
 
 For example, the system below doesn't ensure the iterative methods will converge to the solution.
 
-![example1](http://latex.codecogs.com/png.latex?\inline&space;\dpi{300}&space;\tiny&space;\begin{bmatrix}&space;3&space;&&space;5&space;&&space;100&space;&&space;10&space;&&space;118\\&space;2&space;&&space;3&space;&&space;5&space;&&space;80&space;&&space;90\\&space;200&space;&&space;4&space;&&space;6&space;&&space;5&space;&&space;215\\&space;10&space;&&space;150&space;&&space;10&space;&&space;10&space;&&space;180\\&space;\end{bmatrix})
+![example1](img\diverge.png)
 
 The matrix lines would need to be re-arranged as follows.
 
-![example](http://latex.codecogs.com/png.latex?\dpi{300}&space;\tiny&space;\begin{bmatrix}&space;200&space;&&space;4&space;&&space;6&space;&&space;5&space;&&space;215\\&space;10&space;&&space;150&space;&&space;10&space;&&space;10&space;&&space;180\\&space;3&space;&&space;5&space;&&space;100&space;&&space;10&space;&&space;118\\&space;2&space;&&space;3&space;&&space;5&space;&&space;80&space;&&space;90&space;\end{bmatrix})
+![example](img\converge.png)
 
 An easy way to do it, is to look at the first collumn and find the line that has the largest number. That must be the first line of the matrix. The line that has the largest number on the second collumn, must be the second line of matrix, and so on.
 
 To apply the iterative methods, just like we did on Picard-Peano, for each variable we write an equation that depends on the other variables and constant terms. For instance, for the system above, assume the variables x, y, z and w. Then we would write x in function of (y,z,w), y in function of (x,z,w) and so on.
 
 The methods just change how x(n+1) is calculated from xn.
-![equation](http://latex.codecogs.com/png.latex?\dpi{300}&space;\left\{\begin{matrix}&space;x&space;=&space;\frac&space;{215-4y-6z-5w}{200}&space;\\&space;y&space;=&space;\frac&space;{180-10x-10z-10w}{180}&space;\\&space;z&space;=&space;\frac&space;{118-3x-5y-10w}{100}&space;\\&space;w&space;=&space;\frac&space;{90-2x-3y-5z}{80}&space;\end{matrix}\right.)
+![equation](img/system.png)
 ## Gauss-Jacobi
 ![jacobi](img/jacobi.png)
 ## Gauss-Seidel
