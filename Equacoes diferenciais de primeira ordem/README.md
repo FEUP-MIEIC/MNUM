@@ -32,3 +32,10 @@ In general, for a ODE in form y' = f(x,y), we have:
 * y(n+1) = yn + f(xn, yn)(x-xn) = yn + f(xn,yn)*h
 
 With these successive tangent lines and with smaller steps, we can obtain better aproximations to the solution. If we want the solution at x=xn, we start from the given particular solution until we reach a tangent line that includes that particular point. The tangent lines give us a solution aproximation on a range [xn, x(n+1)].
+
+### Error estimation and Convergence coefficient
+Just like before on the Simpson and Trapezium methods, we can also calculate a convergence coefficient and estimate the error.
+
+![coef](http://latex.codecogs.com/png.latex?\dpi{300}&space;\tiny&space;\frac&space;{{I}'-I}{{I}''-{I}'}\approx&space;2)
+
+![error](http://latex.codecogs.com/png.latex?\dpi{300}&space;\tiny&space;{\varepsilon}''={I}''-{I}')
