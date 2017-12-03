@@ -34,11 +34,11 @@ There are two iterative methods based on Picard-Peano method seen on Chapter 2. 
 
 For example, the system below doesn't ensure the iterative methods will converge to the solution.
 
-![example1](img\diverge.png)
+![example1](img/diverge.png)
 
 The matrix lines would need to be re-arranged as follows.
 
-![example](img\converge.png)
+![example](img/converge.png)
 
 An easy way to do it, is to look at the first collumn and find the line that has the largest number. That must be the first line of the matrix. The line that has the largest number on the second collumn, must be the second line of matrix, and so on.
 
