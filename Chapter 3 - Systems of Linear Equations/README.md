@@ -1,3 +1,4 @@
+
 The chapter 3 regards numerical methods to solve systems of linear equations.
 # Gaussian Elimination
 The Gauss-Jordan method consists in transforming a matrix till the elements on the main diagonal, aii, be equal to 1, and all the remaining elements be equal to zero (identity matrix). 
@@ -27,7 +28,8 @@ Solving the above system shows how the solutions are affected.
 ![deltaA](http://latex.codecogs.com/png.latex?\inline&space;\dpi{150}&space;\tiny&space;\delta&space;a) is a NxN matrix, filled with the error that affects A and ![deltaB](http://latex.codecogs.com/png.latex?\inline&space;\dpi{150}&space;\tiny&space;\delta&space;b) is a Nx1 matrix filled with the error that affects B.
 ![deltaX](http://latex.codecogs.com/png.latex?\inline&space;\dpi{150}&space;\tiny&space;X_{0}) represents the system solution.
 
-#### Internal stability 
+#### Internal stability
+Heeelp :poop:
 
 # Iterative Methods
 There are two iterative methods based on Picard-Peano method seen on Chapter 2. Iterative methods tend to diverge in most cases, so there's a convergence condition for both methods listed below. Representing a system of linear equations in matricial form, Ax=b, we need to ensure for every line in A, the element aii has an absolute value (main diagonal) higher than the sum of the remaining elements, aij, absolute value.
