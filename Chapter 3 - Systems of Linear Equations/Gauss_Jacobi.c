@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 int main() {
     /*
@@ -20,9 +21,9 @@ int main() {
         x = (24-2*yn)/7;
         y = (27-zn-4*xn)/10;
         z = (27-5*xn+2*yn)/8;
-        printf("x: %lf\n", x);
-        printf("y: %lf\n", y);
-        printf("z: %lf\n\n", z);
+        printf("x: %.6lf\tResiduo: %.6lf\n", x, fabs(24 - 7*x - 2*y));
+        printf("y: %.6lf\tResiduo: %.6lf\n", y, fabs(27 - 4*x - 10*y - z));
+        printf("z: %.6lf\tResiduo: %.6lf\n\n", z, fabs(27 - 5*x + 2*y - 8*z));
     }
 
     

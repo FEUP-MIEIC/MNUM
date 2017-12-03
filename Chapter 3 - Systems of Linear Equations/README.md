@@ -29,7 +29,15 @@ Solving the above system shows how the solutions are affected.
 ![deltaX](http://latex.codecogs.com/png.latex?\inline&space;\dpi{150}&space;\tiny&space;X_{0}) represents the system solution.
 
 #### Internal stability
-Heeelp :poop:
+The residual is a collumn matrix, calculated as follows:
+
+![eq](http://latex.codecogs.com/png.latex?\dpi{300}&space;\tiny&space;\varepsilon&space;=&space;b&space;-&space;A.x_{0})
+
+Imagine you have the following equation, 3x+5y+100z+10w = 118, the first of the system of equations. The first element of the residual collumn would simply be 118-(3xn+5yn+100zn+10wn). You just need to do the same for the other system equations and complete the residual collumns.
+
+To determine the internal stability you need to solve the following system (probably using the Gauss method). In theory, the delta collumn matrix would tell us the error we got after calculating the system solutions. Therefore, we could calculate the exact solution, or a very close one, doing x = x0 +/- dx. However, the method used to calculate the delta collumn also leads to errors, so this is a bad approach. 
+
+![eq](http://latex.codecogs.com/png.latex?\dpi{300}&space;\tiny&space;A.\delta&space;=&space;\varepsilon) 
 
 # Iterative Methods
 There are two iterative methods based on Picard-Peano method seen on Chapter 2. Iterative methods tend to diverge in most cases, so there's a convergence condition for both methods listed below. Representing a system of linear equations in matricial form, Ax=b, we need to ensure for every line in A, the element aii has an absolute value (main diagonal) higher than the sum of the remaining elements, aij, absolute value.
@@ -46,7 +54,6 @@ An easy way to do it, is to look at the first collumn and find the line that has
 
 To apply the iterative methods, just like we did on Picard-Peano, for each variable we write an equation that depends on the other variables and constant terms. For instance, for the system above, assume the variables x, y, z and w. Then we would write x in function of (y,z,w), y in function of (x,z,w) and so on.
 
-The methods just change how x(n+1) is calculated from xn.
 ![equation](img/system.png)
 ## Gauss-Jacobi
 ![jacobi](img/jacobi.png)
