@@ -36,6 +36,10 @@ With these successive tangent lines and with smaller steps, we can obtain better
 ### Error estimation and Convergence coefficient
 Just like before on the Simpson and Trapezium methods, we can also calculate a convergence coefficient and estimate the error.
 
+Because Euler's method is a first order method, the coefficient should be aproximatelly 2. That also means if you reduce the step, **h**, by half, the error is proportional and should reduce aproximatelly by half.
+
 ![coef](http://latex.codecogs.com/png.latex?\dpi{300}&space;\tiny&space;\frac&space;{{I}'-I}{{I}''-{I}'}\approx&space;2)
+
+To estimate the error of best solution aproximation, **I''** with **h/4** step, you can use the following formula
 
 ![error](http://latex.codecogs.com/png.latex?\dpi{300}&space;\tiny&space;{\varepsilon}''={I}''-{I}')
