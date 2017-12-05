@@ -27,6 +27,7 @@ int main() {
         t += h;
         printf("t: %.6lf\tC: %.6lf\tT: %.6lf\n", t, C, T);
     }
+    double C_euler = C; //needed for c)
 
     /*
         4. b)
@@ -44,10 +45,10 @@ int main() {
         C = C + d1/6 + d2/3 + d3/3 + d4/6;
 
         // Calculate T(n+1)
-        d1 = h*func_T(t,T,C);
-        d2 = h*func_T(t+h/2, T+d1/2, C);
-        d3 = h*func_T(t+h/2, T+d2/2, C);
-        d4 = h*func_T(t+h, T+d3, C);
+        d1 = h*func_T(t,T,aux);
+        d2 = h*func_T(t+h/2, T+d1/2, aux);
+        d3 = h*func_T(t+h/2, T+d2/2, aux);
+        d4 = h*func_T(t+h, T+d3, aux);
         T = T + d1/6 + d2/3 + d3/3 + d4/6;
 
         // update t
@@ -63,7 +64,7 @@ int main() {
 
     // with h' = h/2
     t = 0, T = 20.0;
-    for(int i = 0; i < 2; i++) {
+    for(int i = 0; i < 4; i++) {
         double aux = C1;
         C1 = C1 + h/2*func_C(t,C1,T); 
         T = T + h*func_T(t, T, aux);
@@ -72,9 +73,9 @@ int main() {
 
     // with h'' = h/4
     t = 0, T = 20.0;
-    for(int i = 0; i < 2; i++) {
+    for(int i = 0; i < 8; i++) {
         double aux = C2;
-        C2 = C2 + h/4*func_C(t,C1,T);
+        C2 = C2 + h/4*func_C(t,C2,T);
         T = T + h*func_T(t, T, aux);
         t += h;
     }
@@ -82,8 +83,9 @@ int main() {
     printf("\n\nc)\n");
     printf("h':%.5lf\n", h/2);
     printf("h':%.5lf\n", h/4);
+    printf("C:%.5lf\n", C_euler);
     printf("C':%.5lf\n", C1);
     printf("C'':%.5lf\n", C2);
-    printf("QC:%.5lf\n", (C1-C)/(C2-C1));
+    printf("QC:%.5lf\n", (C1-C_euler)/(C2-C1));
     printf("erro:%.5lf\n", C2-C1); // first order method
 }
