@@ -1,3 +1,4 @@
+
 # Ex1
 ```
 x:0.27778
@@ -73,3 +74,6 @@ C'':1.32773
 QC:2.20189
 erro:0.01457
 ```
+
+
+Thanks @xRuiAlves for reporting erros in exercise 4
