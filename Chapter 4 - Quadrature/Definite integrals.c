@@ -3,48 +3,45 @@
 #define Nx 4
 #define Ny 4
 
-double f_x(double x)
-{
-    return x;
+double f(double x, double y) {
+    return x*y;
 }
 
-double f_y(double y)
-{
-    return y;
-}
+double primitive_simpson_extended(double (*f)(double, double), double xa, double xb, double ya, double yb, int nx, int ny) {
+    double hx = fabs(xb-xa)/nx;
+    double hy = fabs(yb-ya)/ny;
+    double I = 0;
+    for(int i = 0; i <= ny; i++) {
+        // determine Ix
+        double Ix = f(xa, ya+hy*i) + f(xb, ya+hy*i);
+        for(int j = 1; j <= nx-1; j++) {
+            if(j%2 == 0) {
+                Ix += 2*f(xa+hx*j, ya+hy*i);
+            } else {
+                Ix += 4*f(xa+hx*j, ya+hy*i);
+            }
+        }
 
-double primitive_simpson(double (*f)(double), double a, double b, int n) {
-    int i;
-    double h = fabs(b-a)/n;
-    double I = (*f)(a) + (*f)(b);
-    for(i = 1; i <= n-1; i++) {
-        if(i%2 != 0)
-            I += 4*(*f)(a+h*i);
+        Ix = hx*Ix/3;
+
+
+        if(i == 0){
+            I += Ix;
+        }
+        else if(i == ny) {
+            I += Ix;
+        }
+        else if(i%2 != 0)
+            I += 4*Ix;
         else 
-            I += 2*(*f)(a+h*i);
+            I += 2*Ix;
     }
 
-    I *= h/3;
+    I *= (hy/3);
 
     return I;
 }
 
 int main(){
-    double const hx = 0.5, hy = 0.5;
-    double Iy = 0; 
-    double Ix = primitive_simpson(&f_x, 0, 2, 4); // the area is retangular, so I want to do Iy * Ix, Ix is equal for every dy
-    double y = 0;
-    for(int i = 1; i <= 3; i++) {
-        if(i % 2 == 0)
-            Iy += 2*Ix*(y+hy*i);
-        else
-            Iy += 4*Ix*(y+hy*i);
-    }
-
-    // add the two extremas, y=a and y=b
-    Iy += 0*Ix;
-    Iy += 2*Ix;
-    Iy *= hy/3;
-
-    printf("%lf", Iy);
+    printf("%lf", primitive_simpson_extended(&f, 0, 2, 0, 2, 4, 4));
 }
