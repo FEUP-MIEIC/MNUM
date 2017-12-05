@@ -31,6 +31,10 @@ t: 1.500000     x: 1.512221
 
 Quociente convergencia: 20.478955
 ```
+**2.c)**
+
+Como o método é de 4ª ordem, se h=0.125 fosse um bom passo de integração, o quociente seria aproximadamente 16, o que não se verifica.
+Então, usuaria h=0.125/2=0.0625
 # Ex3
 ```
 TRAPEZIO
@@ -48,12 +52,23 @@ Erro: -0.00000
 ```
 # Ex4
 ```
+a)
 EULER
 t: 0.200000     C: 1.600682     T: 27.986360
 t: 0.400000     C: 1.281077     T: 33.579824
 
 
+b)
 RK4
-t: 0.600000     C: 1.049202     T: 36.274844
-t: 0.800000     C: 0.859294     T: 37.991725
+t: 0.200000     C: 1.638025     T: 26.224626
+t: 0.400000     C: 1.341554     T: 30.730439
+
+
+c)
+h':0.10000
+h':0.05000
+C':1.62061
+C'':1.83821
+QC:1.28237
+erro:0.21761
 ```

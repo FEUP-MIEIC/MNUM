@@ -37,6 +37,6 @@ int main(){
 
 /*
     2.c)
-    Como o método é de 4ª ordem, se h=0.125 fosse um bom passo de integração, o quociente seria aproximadamente 16, o que não se verifica
+    Como o método é de 4ª ordem, se h=0.125 fosse um bom passo de integração, o quociente seria aproximadamente 16, o que não se verifica.
     Então, usuaria h=0.125/2=0.0625
 */

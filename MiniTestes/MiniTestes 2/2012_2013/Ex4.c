@@ -19,7 +19,7 @@ int main() {
     /*
         4. a)
     */
-    printf("EULER\n");
+    printf("a)\nEULER\n");
     for(int i = 0; i < 2; i++) {
         double aux = C;
         C = C + h*func_C(t,C,T);
@@ -31,8 +31,9 @@ int main() {
     /*
         4. b)
     */
-    printf("\n\nRK4\n");
-     for(int i = 0; i < 2; i++) {
+    printf("\n\nb)\nRK4\n");
+    t = 0, C = 2.0, T = 20.0;
+    for(int i = 0; i < 2; i++) {
         double aux = C;
         double d1,d2,d3,d4;
         // Calculate C(n+1)
@@ -53,5 +54,36 @@ int main() {
         t += h;
         printf("t: %.6lf\tC: %.6lf\tT: %.6lf\n", t, C, T);
     }
-    
+
+
+    /*
+        4.c
+    */
+    double C1 = 2.0, C2 = 2.0;
+
+    // with h' = h/2
+    t = 0, T = 20.0;
+    for(int i = 0; i < 2; i++) {
+        double aux = C1;
+        C1 = C1 + h/2*func_C(t,C1,T); 
+        T = T + h*func_T(t, T, aux);
+        t += h;
+    }
+
+    // with h'' = h/4
+    t = 0, T = 20.0;
+    for(int i = 0; i < 2; i++) {
+        double aux = C2;
+        C2 = C2 + h/4*func_C(t,C1,T);
+        T = T + h*func_T(t, T, aux);
+        t += h;
+    }
+
+    printf("\n\nc)\n");
+    printf("h':%.5lf\n", h/2);
+    printf("h':%.5lf\n", h/4);
+    printf("C':%.5lf\n", C1);
+    printf("C'':%.5lf\n", C2);
+    printf("QC:%.5lf\n", (C1-C)/(C2-C1));
+    printf("erro:%.5lf\n", C2-C1); // first order method
 }
