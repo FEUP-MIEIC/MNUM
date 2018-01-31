@@ -1,0 +1,3 @@
+Na P4C o enunciado está errado, é T em vez de C.
+Só tenho a resolução em código da pergunta 1 e 3, porque os outros foram enviados de forma separada. Ainda assim tenho os métodos praticamente 
+todos nesta drive.
