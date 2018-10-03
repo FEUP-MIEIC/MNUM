@@ -26,7 +26,7 @@ The resultant error ![equation](http://latex.codecogs.com/gif.latex?%5Cinline%20
 
 The simpson rule aproximates the area under the curve of a function f(x) with parabolas (union of three function points). This is an improvement over the trapezium rule. If the sign of the second derivative of f doesn't change, the trapezium rule drives to a sistematic error. With parabolas, the aproximation precision increases. 
 
-To ingrate a function f(x) between **a** and **b**, with **n** (even) steps, the general formula is
+To integrate a function f(x) between **a** and **b**, with **n** (even) steps, the general formula is
 
 ![equation](http://latex.codecogs.com/gif.latex?I%20%3D%20%5Cfrac%7Bh%7D%7B3%7D%5Bf%28a%29%20&plus;%204f%28a&plus;h%29%20&plus;%202f%28a&plus;2h%29%20&plus;%20...%20&plus;%204f%28a&plus;%28n-2%29h%29%20&plus;%202f%28a&plus;%28n-1%29h%29&plus;f%28b%29%5D)
 
